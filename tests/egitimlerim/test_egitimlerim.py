@@ -158,7 +158,7 @@ class Test_Egitimlerim:
     #TC02 devam ettiklerim bölümü
         
     #a'dan z'ye sıralama  
-    def test_tumegitimlerim_list_by_AtoZ(self):
+    def test_devamettiklerim_list_by_AtoZ(self):
         self.pre_condition()
         ongoings = self.waitForElementVisible(ONGOINGS_ID)
         ongoings.click()
@@ -175,7 +175,7 @@ class Test_Egitimlerim:
         assert lesson1d.text < lesson2d.text
 
     #z'den a'ya sıralama
-    def test_tumegitimlerimlist_by_ZtoA(self):
+    def test_devamettiklerim_by_ZtoA(self):
         self.pre_condition()
         ongoings = self.waitForElementVisible(ONGOINGS_ID)
         ongoings.click()
@@ -193,7 +193,7 @@ class Test_Egitimlerim:
         assert lesson1d.text > lesson2d.text
 
     #yeniden eskiye sıralama
-    def test_tumegitimlerim_list_by_newest(self):
+    def test_devamettiklerim_list_by_newest(self):
         self.pre_condition()
         ongoings = self.waitForElementVisible(ONGOINGS_ID)
         ongoings.click()
@@ -220,7 +220,7 @@ class Test_Egitimlerim:
         assert date1 > date2
 
     #eskiden yeniye sıralama
-    def test_tumegitimlerim_list_by_oldest(self):
+    def test_devamettiklerim_list_by_oldest(self):
         self.pre_condition()
         ongoings = self.waitForElementVisible(ONGOINGS_ID)
         ongoings.click()
@@ -252,7 +252,7 @@ class Test_Egitimlerim:
     #TC03 tamamladıklarım bölümü
     
      #a'dan z'ye sıralama  
-    def test_tumegitimlerim_list_by_AtoZ(self):
+    def test_tamamladiklarim_list_by_AtoZ(self):
         self.pre_condition()
         doneLessons = self.waitForElementVisible(DONELESSONS_ID)
         doneLessons.click()
@@ -269,7 +269,7 @@ class Test_Egitimlerim:
         assert lesson1t.text < lesson2t.text
 
     #z'den a'ya sıralama
-    def test_tumegitimlerimlist_by_ZtoA(self):
+    def test_tamamladiklarim_by_ZtoA(self):
         self.pre_condition()
         doneLessons = self.waitForElementVisible(DONELESSONS_ID)
         doneLessons.click()
@@ -287,7 +287,7 @@ class Test_Egitimlerim:
         assert lesson1t.text > lesson2t.text
 
     #yeniden eskiye sıralama
-    def test_tumegitimlerim_list_by_newest(self):
+    def test_tamamladiklarim_list_by_newest(self):
         self.pre_condition()
         doneLessons = self.waitForElementVisible(DONELESSONS_ID)
         doneLessons.click()
@@ -314,7 +314,7 @@ class Test_Egitimlerim:
         assert date1 > date2
 
     #eskiden yeniye sıralama
-    def test_tumegitimlerim_list_by_oldest(self):
+    def test_tamamladiklarim_list_by_oldest(self):
         self.pre_condition()
         doneLessons = self.waitForElementVisible(DONELESSONS_ID)
         doneLessons.click()
@@ -339,7 +339,7 @@ class Test_Egitimlerim:
 
         date1 = datetime.strptime(lesson3t, "%d %b %Y %H:%M")
         date2 = datetime.strptime(lesson4t, "%d %b %Y %H:%M")
-        assert date1 < date2 # 1 2den küçük olmalı
+        assert date1 < date2 
 
     #TC04
     def test_search_lessons(self):
