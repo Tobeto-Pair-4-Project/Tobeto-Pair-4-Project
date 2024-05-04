@@ -6,10 +6,9 @@ from selenium.webdriver.support.wait import WebDriverWait #ilgili driverı bekle
 from selenium.webdriver.support import expected_conditions as ec #beklenen koşullar
 from selenium.common.exceptions import TimeoutException
 import pytest
-from constants.sifreConstants import *
+from constants.mediaAccountConstants import *
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
-from constants.medyaHesaplarimConstants import *
 from selenium.webdriver.common.action_chains import ActionChains
 
 class Test_MedyaHesaplarim():
