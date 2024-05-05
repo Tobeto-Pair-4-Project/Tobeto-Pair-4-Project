@@ -104,6 +104,7 @@ class Test_Deneyimlerim:
         expVerified = self.waitForElementVisible(EXPVERIFIED_XPATH)
         assert expVerified.text == EXPVERIFIEDTEXT
         closeButton = self.waitForElementClickable(CLOSEBUTTON_XPATH)
+        closeButton.click()
         saveVerified = self.waitForElementVisible(SAVEVERIFIED_XPATH)
         assert saveVerified.text == SAVEVERIFIEDTEXT
         sleep(2)
@@ -166,6 +167,7 @@ class Test_Deneyimlerim:
         expVerified = self.waitForElementVisible(EXPVERIFIED_XPATH)
         assert expVerified.text == EXPVERIFIEDTEXT
         closeButton = self.waitForElementClickable(CLOSEBUTTON_XPATH)
+        closeButton.click()
         saveVerified = self.waitForElementVisible(SAVEVERIFIED_XPATH)
         assert saveVerified.text == SAVEVERIFIEDTEXT
 
