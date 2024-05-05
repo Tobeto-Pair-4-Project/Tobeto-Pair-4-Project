@@ -41,7 +41,7 @@ profileInfoSavedAlert_text = "• Bilgileriniz başarıyla güncellendi."
 YOURTCNOVERIFIED_CSS = (By.CSS_SELECTOR, "div[role='alert'] > .toast-body")
 yourTCnoVerified_text = "• Bilgileriniz başarıyla güncellendi."
 EDITBUTTON_XPATH = (By.XPATH, "/html//div[@id='__next']/div[@class='back-white']/main/section//div[@class='col-12 col-lg-9']/form[@action='#']//div[@class='col-12 mb-6 text-center']/div[1]/div[1]")
-ADDFILE_XPATH = (By.XPATH, "/html/body/div[1]/div/main/section/div/div/div[2]/form/div/div[1]/div[2]/div/div/div/div[2]/div/div[2]/input[1]")
+ADDFILE_CSS = (By.CSS_SELECTOR, ".uppy-c-btn")
 file_path = "C:\\Users\\recep\\Downloads\\profilephoto.jpg"
 file2_path = "C:\\Users\\recep\\Downloads\\image.webp"
 UPLOADFILEBUTTON_XPATH = (By.XPATH, "/html//div[@id='__next']/div[@class='back-white']/main/section//div[@class='col-12 col-lg-9']/form[@action='#']//div[@class='uppy-Root']/div/div[@role='dialog']//div[@class='uppy-Dashboard-progressindicators']/div[1]//button[@type='button']")
