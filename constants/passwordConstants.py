@@ -1,6 +1,3 @@
-
-
-
 import random
 import string
 
@@ -74,3 +71,7 @@ afterXpath = "//div[@id='identifierNext']/div/button/span"
 nowLoginCss = ".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d"
 inboxFirstXpath = "(//*[@jscontroller='ZdOxDb'])[1]"
 firstMessageXpath = "//*[@rel='noopener']"
+emailInputXpath = "(//*[@class='form-control mt-6'])[1]"
+passwordInputXpath = "(//*[@class='form-control mt-6'])[2]" 
+emailBoxId = "identifierId"
+girisYapButtonCss = ".btn:nth-child(3)"
