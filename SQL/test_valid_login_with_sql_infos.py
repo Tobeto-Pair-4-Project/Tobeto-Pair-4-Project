@@ -20,16 +20,17 @@ class Test_Login_SQL:
     def test_valid_login_with_sql(self):
 
         # Veritabanına bağlan
-        conn = sqlite3.connect('C:/sqlitedbs/login.db')  # Veritabanının tam yolunu belirttim.
+        conn = sqlite3.connect('C:/sqlitedbs/login.db')
+         # Veritabanının tam yolunu belirttim.
 
         # Bağlantı üzerinden bir cursor (imleç) oluştururur
         c = conn.cursor()
 
-        # Veritabanından kullanıcı bilgilerini al
+        # Veritabanından kullanıcı bilgilerini alır ve bir diziye atar.
         c.execute("SELECT email, password FROM login")
         user_info = c.fetchall()
 
-        #veri tabanından alınan bilgileri teker teker çeviren for döngüsü
+        #veri tabanından alınan bilgileri attığımız dizi içinden teker teker çeviren for döngüsü.
         for email, password in user_info:
             self.driver=webdriver.Chrome()
             self.driver.maximize_window()

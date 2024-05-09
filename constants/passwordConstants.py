@@ -67,6 +67,7 @@ alertXpath = "//*[@class='toast-body']"
 yeniSifreEskisifreAyni = "• Yeni sifreniz mevcut sifrenizden farkli olmalidir"
 fiveDigitPasswords = generate_random_string(5)
 gmailUrl = "https://mail.google.com/mail/u/0/#inbox"
+fakeMailUrl="https://temp-mail.org/en/"
 afterXpath = "//div[@id='identifierNext']/div/button/span"
 nowLoginCss = ".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d"
 inboxFirstXpath = "(//*[@jscontroller='ZdOxDb'])[1]"
