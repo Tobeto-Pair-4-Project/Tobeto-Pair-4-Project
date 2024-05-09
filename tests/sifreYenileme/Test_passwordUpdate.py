@@ -72,6 +72,23 @@ class Test_Sifre():
          first_messageLink.click()
          sleep(5)
 
+
+      def test_invalidMail(self):
+         self.preCondition()
+         epostaInput = self.waitForElelemetVisible((By.XPATH,ePostaXPath))
+         epostaInput.send_keys(gecersizformatmail)
+         sendButton = self.waitForElelemetVisible((By.CSS_SELECTOR,gonderCss)).click()
+         gecersizformatMailText = self.waitForElelemetVisible((By.CSS_SELECTOR,popupCss))
+         assert gecersizformatMailText.text == gecersizformattext
+      
+      def test_succesPasswordReset(self):
+         self.preCondition()
+
+         epostaInput = self.waitForElelemetVisible((By.XPATH,ePostaXPath))
+         epostaInput.send_keys(validemail)
+         self.waitForElelemetVisible((By.CSS_SELECTOR,gonderCss)).click()
+        
+         self.gmailLogin()
          window_after = self.driver.window_handles[1]
          self.driver.switch_to.window(window_after)
          yeniSifreInput = self.waitForElelemetVisible((By.XPATH,yeniSifreXpath))
