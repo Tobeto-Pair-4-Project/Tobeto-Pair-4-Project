@@ -16,6 +16,17 @@ class Test_MyEducation_Life:
         self.driver=webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.get(giris_URL)
+        
+    def teardown_method(self):
+        self.driver.quit()
+
+    def waitForElementVisible(self,locator,timeout=10):
+        return WebDriverWait(self.driver,timeout).until(ec.visibility_of_element_located(locator))
+    
+    def waitForElementsVisible(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(ec.visibility_of_all_elements_located(locator))
+    
+    def pre_condition(self):
         emailInput=self.waitForElementVisible((By.CSS_SELECTOR,email_CSS))
         passwordInput=self.waitForElementVisible((By.CSS_SELECTOR,password_CSS))
         loginButton=self.waitForElementVisible((By.CSS_SELECTOR,loginButton_CSS))
@@ -30,19 +41,10 @@ class Test_MyEducation_Life:
         profilDropdownMenu.click()
         profileInformationButton=self.waitForElementVisible((By.XPATH,profileInformationButton_xpath))
         profileInformationButton.click()
-    
-
-    def teardown_method(self):
-        self.driver.quit()
-
-    def waitForElementVisible(self,locator,timeout=10):
-        return WebDriverWait(self.driver,timeout).until(ec.visibility_of_element_located(locator))
-    
-    def waitForElementsVisible(self, locator, timeout=10):
-        return WebDriverWait(self.driver, timeout).until(ec.visibility_of_all_elements_located(locator))
 
 
     def test_add_education(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         educationStatusButton=self.waitForElementVisible((By.CSS_SELECTOR,educationStatusButton_CSS))
@@ -72,6 +74,7 @@ class Test_MyEducation_Life:
         sleep(3)
 
     def test_add_continuing_education(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         educationStatusButton=self.waitForElementVisible((By.CSS_SELECTOR,educationStatusButton_CSS))
@@ -99,6 +102,7 @@ class Test_MyEducation_Life:
         assert continueEducationTitle in continueEducationVerify.text, f"'{continueEducationTitle}' ifadesi bulunamadı."
 
     def test_blankSpaces_error_messages(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         saveButton=self.waitForElementVisible((By.XPATH,saveButton_xpath))
@@ -110,6 +114,7 @@ class Test_MyEducation_Life:
         sleep(3)
 
     def test_delete_education(self):
+        self.pre_condition()
         self.test_add_education()
         sleep(1)
         deleteButton=self.waitForElementVisible((By.CSS_SELECTOR,deleteButton_CSS))
@@ -135,6 +140,7 @@ class Test_MyEducation_Life:
 
     #Bug , mezuniyet yılı seçildiğinde, devam ediyor butonu pasif hale gelmeliydi.
     def test_continueButton_with_graduationYear_BUG(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         educationStatusButton=self.waitForElementVisible((By.CSS_SELECTOR,educationStatusButton_CSS))
@@ -163,6 +169,7 @@ class Test_MyEducation_Life:
         sleep(2)
 
     def test_max_character_limit(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         educationStatusButton=self.waitForElementVisible((By.CSS_SELECTOR,educationStatusButton_CSS))
@@ -189,6 +196,7 @@ class Test_MyEducation_Life:
         assert (maxCharErrorMessage==errorMessage for errorMessage in errorMessages), f"'{maxCharErrorMessage}' ifadesi bulunamadı"
 
     def test_min_character_limit(self):
+        self.pre_condition()
         myEducationLifeButton=self.waitForElementVisible((By.XPATH,myEducationLifeButton_xpath))
         myEducationLifeButton.click()
         educationStatusButton=self.waitForElementVisible((By.CSS_SELECTOR,educationStatusButton_CSS))
