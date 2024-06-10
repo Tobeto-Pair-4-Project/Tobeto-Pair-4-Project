@@ -1,5 +1,8 @@
 # Tobeto-Pair-4-Project
+
 # Merhaba, Tobeto Pair 4 ekibi olarak bu projede tobeto.com'un testlerini gerçekleştirdik.
+
+Projemiz kapsamında Tobeto platformunun test süreçlerini yönetirken, farklı test araçlarını etkin bir şekilde kullandık. İş analisti ekibimizin hazırladığı gereksinim dokümanlarını gerektiğinde revize ederek test senaryolarını oluşturduk. Manuel testlerin yanı sıra, Python Selenium ile otomasyon testlerini gerçekleştirdik. API testleri için ise Postman ve Swagger araçlarından yararlandık. Ayrıca, JMeter kullanarak performans testleri gerçekleştirdik ve platformun yük altında nasıl bir performans gösterdiğini analiz ettik.
 
 Proje Bağlantıları
 
